@@ -1,0 +1,214 @@
+body {
+    background-image: linear-gradient(rgba(247, 240, 240, 0.1), rgba(230, 220, 220, 0.1)),url('iss-image.jpg'); /* Replace with your image file */
+    background-size: cover; /* Makes sure the image covers the whole page */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating */
+    height: 100vh; /* Ensures full viewport height */
+    margin: 0;
+    animation: fadeInPage 1s ease-in-out;
+}
+.frame {
+    width: 89vw; 
+    height: 84vh;
+    background-color: rgba(255, 255, 255, 0.15); 
+    border-radius: 20px; 
+    border: 2px solid rgba(255, 255, 255, 0.3); 
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 17%;
+    left: 5%;
+    right: auto;
+    
+}
+.navbar {
+    position: absolute;
+    top: 5%; /* Adjust to move outside the frame */
+    left: 50%;
+    transform: translateX(-50%); /* Center it */
+    background-color: rgba(255, 255, 255, 0.2); /* Less transparency */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 10px rgba(71, 44, 224, 0.2);
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+.navbar:hover {
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.7); /* Neon glow */
+    border-color: rgba(0, 255, 255, 0.5);
+}
+
+
+/* Side Lines (Extensions) */
+.navbar::before,
+.navbar::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 50px; /* Length of the lines */
+    height: 2px;
+    background-color: rgb(59, 46, 243);
+}
+
+.navbar::before {
+    left: -50px;
+}
+
+.navbar::after {
+    right: -50px;
+}
+.navbar a {
+    color: #E0E0E0;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 50%;
+    background: #00FFFF; /* Neon cyan underline */
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+.navbar a.active {
+    border-bottom: 3px solid #00FFFF; /* Cyan glow under active link */
+}
+
+
+.frame {
+    position: relative; /* Ensure positioning context */
+    width: 86%; /* Adjust to match your frame width */
+    height: 77vh; /* Adjust based on frame height */
+    margin: auto; /* Center the frame */
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    left:auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+    
+
+}
+.frame:hover {
+    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+}
+.moving-text {
+    position: absolute;
+    top: -29px; /* Adjust to place below the frame's top edge */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 60px; /* Increase text size */
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px blue; /* Neon Effect */
+    white-space: nowrap;
+}
+
+
+
+
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 boxes in one row */
+    gap: 24px;
+    position: absolute;
+    bottom: 80px; /* Adjust to place inside the frame */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; /* Adjust width to fit the frame */
+}
+
+.box {
+    background: rgba(34, 40, 49, 0.7); /* Light transparency */
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    color: #e0e0e0;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+.box:hover {
+    background: rgba(0, 255, 255, 0.3);
+    color: #00FFFF;
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.7);
+}
+.search-container {
+    position: absolute;
+    top: 110px; /* Adjust position below moving text */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2); /* Light transparency */
+    padding: 10px 15px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 250px; /* Adjust width */
+}
+
+.search-container i {
+    color: white;
+    margin-right: 10px;
+}
+
+.search-container input {
+    border: none;
+    background: transparent;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    width: 100%;
+}
+
+.search-container input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+.search-bar:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+.search-bar {
+    padding-left: 30px;
+    position: relative;
+}
+.fas {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+@keyframes fadeInPage {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
